@@ -14,6 +14,7 @@ h3{
 div {
 
         font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+        display:inline-block;
 }
 
 div.C1 {
@@ -23,6 +24,7 @@ div.C1 {
 	border-style: solid;
         border-width: 2px;
         border-color: black;
+        display:inherit;
 }
 
 div.C2 {
@@ -39,18 +41,18 @@ div.C2 {
         text-align: right;
 }
 
-span.C3 {
+div.C3 {
         background-color:white;
+        color:black;
         position: relative;
         width:81px;
         height:81px;
-        margin:20px 20px 20px 20px;
+        margin:6px 6px 6px 6px;
 	border-style: solid;
-        border-width: 2px;
+        border-width: 1px;
         border-color: black;
        	font-size: 42px;
-        vertical-align: middle;
-        text-align: right;
+        text-align: center;
 }
 
 
@@ -63,17 +65,30 @@ span.C3 {
 465647
 </div>
 
-<span class=C3 >
+<div class=C3 style="margin:6px 6px 6px 20px">
 +
-</span>
+</div>
 
-<span class=C3 >
-+
-</span>
+<div class=C3 >
+-
+</div>
 
-<span class=C3 >
-+
-</span>
+<div class=C3 >
+*
+</div>
+
+<div class=C3 style="margin:6px 6px 6px 20px">
+/
+</div>
+
+<div class=C3 >
+=
+</div>
+
+<div class=C3 >
+C
+</div>
+
 </div>
 </body>
 </html>
