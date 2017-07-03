@@ -17,7 +17,7 @@ div {
         display:inline-block;
 }
 
-div.C1 {
+div.CALC {
         background-color:white;
         width:338px;
         margin:80px auto;
@@ -27,8 +27,9 @@ div.C1 {
         display:inherit;
 }
 
-div.C2 {
+div.DISPLAY {
         background-color:white;
+        color:black;
         position: relative;
         width:280px;
         height:50px;
@@ -40,14 +41,10 @@ div.C2 {
         vertical-align: middle;
         text-align: right;
 }
-
-div.C3 {
-        background-color:white;
-        color:black;
+div.BUT {
         position: relative;
         width:81px;
         height:81px;
-        margin:6px 6px 6px 6px;
 	border-style: solid;
         border-width: 1px;
         border-color: black;
@@ -56,38 +53,122 @@ div.C3 {
 }
 
 
+div.BUTTON_BLOCK {
+
+        margin-bottom:10px;
+}
+
+div.C3 {
+        background-color:white;
+        color:black;
+}
+
+div.C3:hover {
+        background-color:black;
+        color:white;
+}
+
+
+
+div.C3_1{
+        margin:6px 6px 6px 6px;
+}
+
+
+div.C3_2{
+        margin:6px 6px 6px 20px;
+}
+
+div.D3 {
+        background-color:#666;
+        color:#fff;
+}
+
+
+div.D3:hover {
+        background-color:white;
+        color:black;
+}
 
 </style>
 <body >
-<div class=C1 >
+<div class=CALC >
 <h3 >MyCalc</h3> 
-<div class=C2 >
+<div class=BUTTON_BLOCK>
+<div class=DISPLAY >
 465647
 </div>
 
-<div class=C3 style="margin:6px 6px 6px 20px">
+<div class="BUT C3 C3_2">
 +
 </div>
 
-<div class=C3 >
+<div class="BUT C3 C3_1">
 -
 </div>
 
-<div class=C3 >
+<div class="BUT C3 C3_1">
 *
 </div>
 
-<div class=C3 style="margin:6px 6px 6px 20px">
+<div class="BUT C3 C3_2">
 /
 </div>
 
-<div class=C3 >
+<div class="BUT C3 C3_1">
 =
 </div>
 
-<div class=C3 >
+<div class="BUT C3 C3_1">
 C
 </div>
+
+<div class="BUT D3 C3_2">
+7
+</div>
+
+<div class="BUT D3 C3_1">
+8
+</div>
+
+<div class="BUT D3 C3_1">
+9
+</div>
+
+<div class="BUT D3 C3_2">
+4
+</div>
+
+<div class="BUT D3 C3_1">
+5
+</div>
+
+<div class="BUT D3 C3_1">
+6
+</div>
+
+<div class="BUT D3 C3_2">
+1
+</div>
+
+<div class="BUT D3 C3_1">
+2
+</div>
+
+<div class="BUT D3 C3_1">
+3
+</div>
+
+<div style="width:182px;" class="BUT D3 C3_2">
+0
+</div>
+
+<div class="BUT D3 C3_1">
+.
+</div>
+</div>
+
+
 
 </div>
 </body>
