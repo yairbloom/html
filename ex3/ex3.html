@@ -2,39 +2,45 @@
 <html>
 <head>
 <style> 
-.flex-container {
+
+.maindiv {
+    background-color: lightgrey;
+    display:inline-block;
+}
+
+
+.pics-container {
     display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
-    width: 70%;
-    background-color: lightgrey;
     float: right;
+    text-align: center;
 }
 
 .flex-item {
     background-color: cornflowerblue;
-    height:100px;
-    width:170px;
+    height:292px;
+    width:375px;
     margin: 10px;
-}
-
-.maindiv {
-    background-color: red;
-    width:570px;
-    display:inline-block;
 }
 
 .divOpions
 {
-    width:28%;
-    display:inline-block;
+    padding: 3px;
 
 }
 
 a {
-
-    border: 1px solid black;
+    font-size:xx-large;
+    display:inline-block;
     width:100%;
+}
+
+
+a.op2 {
+
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 </style>
@@ -42,19 +48,19 @@ a {
 <body>
 <div class="maindiv">
   <div class="divOpions">	
-	  <a class ="aaa">Option 1</a><br>	
 	  <a>Option 1</a><br>	
-	  <a>Option 1</a><br>	
+	  <a class="op2">Option 2</a><br>	
+	  <a>Option 3</a><br>
   </div>	
 
 
-<div class="flex-container">
-  <div><img class="flex-item" src="me.jpg" alt="Smiley face"></div>
-  <div><img class="flex-item" src="me.jpg" alt="Smiley face"></div>
-  <div><img class="flex-item" src="me.jpg" alt="Smiley face"></div>
-  <div><img class="flex-item" src="me.jpg" alt="Smiley face"></div>
-  <div><img class="flex-item" src="me.jpg" alt="Smiley face"></div>
-  <div><img class="flex-item" src="me.jpg" alt="Smiley face"></div>
+<div class="pics-container">
+  <div><img class="flex-item" src="me.jpg" alt="Smiley face"><br><a>Yair Bloom</a></div>
+  <div><img class="flex-item" src="me.jpg" alt="Smiley face"><br><a>Yair Bloom</a></div>
+  <div><img class="flex-item" src="me.jpg" alt="Smiley face"><br><a>Yair Bloom</a></div>
+  <div><img class="flex-item" src="me.jpg" alt="Smiley face"><br><a>Yair Bloom</a></div>
+  <div><img class="flex-item" src="me.jpg" alt="Smiley face"><br><a>Yair Bloom</a></div>
+  <div><img class="flex-item" src="me.jpg" alt="Smiley face"><br><a>Yair Bloom</a></div>
 </div>
 </div>
 
