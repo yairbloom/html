@@ -6,6 +6,7 @@
 .maindiv {
     background-color: lightgrey;
     display:inline-block;
+    width:100%;
 }
 
 
@@ -13,21 +14,47 @@
     display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
-    float: right;
     text-align: center;
+    width:70%;
+    border: 2px solid black;
+    margin: auto;
 }
 
+@media screen and (min-width: 1024px) {
+  .pics-container {
+    border: 2px solid black;
+    float: left;
+  }
+}
+
+
+
 .flex-item {
-    background-color: cornflowerblue;
-    height:292px;
-    width:375px;
     margin: 10px;
 }
+
+@media screen and (min-width: 1024px) {
+  .flex-item {
+    height:292px;
+    width:375px;
+  }
+}
+
+
 
 .divOpions
 {
     padding: 3px;
+    text-align: left;
+    width:100%;
 
+}
+
+@media screen and (min-width: 1024px) {
+    .divOpions {
+	    float: left;
+	    width:29%;
+    }
 }
 
 a {
