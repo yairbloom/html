@@ -157,7 +157,7 @@ C
 2
 </div>
 
-<div class="BUT BUT_NUMBER " onclick="OnClickNum(3)">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum('3')">
 3
 </div>
 
@@ -178,9 +178,16 @@ C
 <script>
 
 var result ="0" ;
+var IsInited = false;
 
 function OnClickNum(n) {
-        result = result.concat(n);
+	if (IsInited)
+		result = result.concat(n);
+	else {
+		result =n;
+		IsInited = true;
+	}
+
 	document.getElementById('disply').innerHTML =result;
   
 }
