@@ -96,9 +96,9 @@ div.BUT_NUMBER:hover {
 <body >
 <div class=CALC >
 <h3 >MyCalc</h3> 
-<div class=BUTTON_BLOCK>
-<div class=DISPLAY >
-465647
+<div class=BUTTON_BLOCK>'
+<div class=DISPLAY id="disply">
+42342432465647
 </div>
 
 <div class="BUT BUT_ACTION ">
@@ -125,43 +125,43 @@ div.BUT_NUMBER:hover {
 C
 </div>
 
-<div class="BUT BUT_NUMBER ">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum(7)">
 7
 </div>
 
-<div class="BUT BUT_NUMBER ">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum(8)">
 8
 </div>
 
-<div class="BUT BUT_NUMBER ">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum(9)">
 9
 </div>
 
-<div class="BUT BUT_NUMBER ">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum(4)">
 4
 </div>
 
-<div class="BUT BUT_NUMBER ">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum(5)">
 5
 </div>
 
-<div class="BUT BUT_NUMBER ">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum(6)">
 6
 </div>
 
-<div class="BUT BUT_NUMBER ">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum(1)">
 1
 </div>
 
-<div class="BUT BUT_NUMBER ">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum(2)">
 2
 </div>
 
-<div class="BUT BUT_NUMBER ">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum(3)">
 3
 </div>
 
-<div style="width:168px;" class="BUT BUT_NUMBER ">
+<div style="width:168px;" class="BUT BUT_NUMBER " onclick="OnClickNum(0)">
 0
 </div>
 
@@ -173,6 +173,19 @@ C
 
 
 </div>
+
+
+<script>
+
+var result ="0" ;
+
+function OnClickNum(n) {
+        result = result.concat(n);
+	document.getElementById('disply').innerHTML =result;
+  
+}
+</script>
+
 </body>
 </html>
 
