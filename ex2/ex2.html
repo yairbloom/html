@@ -98,62 +98,62 @@ div.BUT_NUMBER:hover {
 <h3 >MyCalc</h3> 
 <div class=BUTTON_BLOCK>'
 <div class=DISPLAY id="disply">
-42342432465647
+0
 </div>
 
-<div class="BUT BUT_ACTION ">
+<div class="BUT BUT_ACTION " onclick="OnClickOperand('+')">
 +
 </div>
 
-<div class="BUT BUT_ACTION ">
+<div class="BUT BUT_ACTION " onclick="OnClickOperand('-')">
 -
 </div>
 
-<div class="BUT BUT_ACTION ">
+<div class="BUT BUT_ACTION " onclick="OnClickOperand('*')">
 *
 </div>
 
-<div class="BUT BUT_ACTION ">
+<div class="BUT BUT_ACTION " onclick="OnClickOperand('/')">
 /
 </div>
 
-<div class="BUT BUT_ACTION ">
+<div class="BUT BUT_ACTION " onclick="OnClickEqual()">
 =
 </div>
 
-<div class="BUT BUT_ACTION ">
+<div class="BUT BUT_ACTION " onclick="OnClickClear()">
 C
 </div>
 
-<div class="BUT BUT_NUMBER " onclick="OnClickNum(7)">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum('7')">
 7
 </div>
 
-<div class="BUT BUT_NUMBER " onclick="OnClickNum(8)">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum('8')">
 8
 </div>
 
-<div class="BUT BUT_NUMBER " onclick="OnClickNum(9)">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum('9')">
 9
 </div>
 
-<div class="BUT BUT_NUMBER " onclick="OnClickNum(4)">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum('4')">
 4
 </div>
 
-<div class="BUT BUT_NUMBER " onclick="OnClickNum(5)">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum('5')">
 5
 </div>
 
-<div class="BUT BUT_NUMBER " onclick="OnClickNum(6)">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum('6')">
 6
 </div>
 
-<div class="BUT BUT_NUMBER " onclick="OnClickNum(1)">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum('1')">
 1
 </div>
 
-<div class="BUT BUT_NUMBER " onclick="OnClickNum(2)">
+<div class="BUT BUT_NUMBER " onclick="OnClickNum('2')">
 2
 </div>
 
@@ -165,7 +165,7 @@ C
 0
 </div>
 
-<div class="BUT BUT_NUMBER ">
+<div class="BUT BUT_NUMBER " onclick="OnClickDot()">
 .
 </div>
 </div>
@@ -177,8 +177,11 @@ C
 
 <script>
 
+var prev_result ="0" ;
 var result ="0" ;
+var opernad = "NONE";
 var IsInited = false;
+var IsDotSelected = false;
 
 function OnClickNum(n) {
 	if (IsInited)
@@ -188,9 +191,62 @@ function OnClickNum(n) {
 		IsInited = true;
 	}
 
-	document.getElementById('disply').innerHTML =result;
+	document.getElementById('disply').innerHTML =result.substring(0,11);
   
 }
+
+
+function OnClickDot() {
+  if (IsDotSelected)
+    return;
+  result = result.concat('.');
+  document.getElementById('disply').innerHTML =result.substring(0,11);
+  IsDotSelected = true;
+}
+
+function OnClickClear() {
+  result ="0" ;
+  prev_result = "0";
+  opernad = "NONE";
+  IsInited = false;
+  IsDotSelected = false;
+  document.getElementById('disply').innerHTML =result.substring(0,11);
+}
+
+
+function OnClickOperand(_oprand) {
+   if (opernad == "NONE")
+   {
+     prev_result = result;
+     result ="0" ;
+     IsInited = false;
+     IsDotSelected = false;
+   }
+   else
+   {
+     prev_result = eval(prev_result.concat(opernad).concat(result));
+     prev_result = prev_result.toString();
+     document.getElementById('disply').innerHTML =prev_result.substring(0,11);
+     result ="0" ;
+     IsInited = false;
+     IsDotSelected = false;
+   }
+   opernad=_oprand;
+}
+
+
+function OnClickEqual() {
+   if (opernad == "NONE")
+     rerurn;
+   prev_result = eval(prev_result.concat(opernad).concat(result));
+   prev_result = prev_result.toString();
+   document.getElementById('disply').innerHTML =prev_result.substring(0,11);
+   result ="0" ;
+   IsInited = false;
+   IsDotSelected = false;
+}
+
+
 </script>
 
 </body>
