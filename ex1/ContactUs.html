@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<body>
+<table  style="width:100%;border-collapse: separate;border: 2px solid black;" class ="t1">
+  <tr>
+    <th style="border: 2px solid black" align="center"><a href="Home.html">Home</a></th>
+    <th style="border: 2px solid black" align="center"><a href="AboutUs.html">About Us</a></th> 
+    <th style="border: 2px solid black" align="center"><a href="ContactUs.html">Contact Us</a></th>
+  </tr>
+  <tr >
+    <td colspan="3" >
+    <FORM METHOD="POST" style="border: 2px solid black;margin: 20px" ACTION="http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi">
+    <TABLE >
+    <TR  align="left">
+    <TD>Name:</TD>
+    <TD>
+      <INPUT TYPE="TEXT" NAME="name" SIZE="20">
+    </TD>
+    <TD></TD>
+  </TR>
+  <TR>
+    <TD>Telephone Number:</TD>
+    <TD><input type="tel" pattern="[0-9]{3}-[0-9]{7}" name="usrtel"></TD>
+    <TD></TD>
+  </TR>
+  <TR align="left">
+    <TD>Date of birth:</TD>
+    <TD><input type="date"  name="birth" style="width:47%"</TD>
+    <TD></TD>
+  </TR>
+  <TR align="left">
+    <TD >Current customer</TD>
+    <TD colspan="2"><input type="radio" name="gender" value="male" colspan="2" > Yes, Existing Customer <input type="radio" name="gender" value="female"> No, New Customer </TD>
+  </TR>
+  <TR align="left">
+    <TD >Reason for contact</TD>
+    <TD colspan="2"><input type="checkbox" name="Reason" value="1" colspan="2" > Curiosity
+                    <input type="checkbox" name="Reason" value="2"> Complaint 
+                    <input type="checkbox" name="Reason" value="3"> I like to write companies</TD>
+  </TR>
+  <TR  align="left">
+    <TD>Profession:</TD>
+    <TD>
+      <select name="Profession" style="width:48%">
+    <option value="Lawer">Lawer</option>
+    <option value="Teacher">Teacher</option>
+    <option value="Tailor">Tailor</option>
+  </select>
+    </TD>
+    <TD></TD>
+  </TR>
+  <TR  align="left">
+    <TD>Your Picture:</TD>
+    <TD colspan="2">
+    <input type="text" name="text1" id="text1">
+    <input type="button" id="loadFile" value="Browes..." onclick="document.getElementById('file').click();" />
+    <input type="file" style="display:none;" id="file" name="file" onchange="document.getElementById('text1').value = value" />
+     </TD>
+  </TR>
+  <TR  align="left">
+  <TD>Comentes:</TD>
+  <TD colspan="2">
+  <textarea rows="4" cols="90">
+  </textarea>
+    </TD>
+  </TR>
+
+
+
+</TABLE>
+<P align="center"> 
+  <button type="reset" value="Reset">Reset</button>
+  <button type="submit" value="Submit">Submit</button>
+</P>
+</FORM>
+    </td>
+
+</body>
+</html>
+
