@@ -7,28 +7,59 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
+   $("#hide").click(function(){
+        $("#eat").toggle();
+    });
+    $("#RadioAll").change(function(){
+        
+        $("#R1").prop('checked', $("#RadioAll").is(":checked"));
+        $("#R2").prop('checked', $("#RadioAll").is(":checked"));
+        $("#R3").prop('checked', $("#RadioAll").is(":checked"));
+        $("#R4").prop('checked', $("#RadioAll").is(":checked"));
+
+    });
+    $("#R1,#R2,#R3,#R4").change(function(){
+        $("#RadioAll").prop('checked', $("#R1").is(":checked") && $("#R2").is(":checked") && $("#R3").is(":checked") && $("#R4").is(":checked"));
+    });
+    $("#RadioOther,#RadioGovrement,#RadioPrivateSector").change(function(){
+       if ($("#RadioOther").is(":checked")) {
+         $("#InputOther").removeAttr('disabled');
+       }
+       else {
+         $("#InputOther").prop('disabled', true);
+       }
+    });
  });
 </script>
 </head>
 
 <style>
+
+div {
+  display:inline-block;
+}
+
 div.MainDiv {
   font-family: 'Open Sans',Helvetica,Arial,sans-serif;
   margin-top: 100px;
   margin-bottom: 100px;
   margin-left: 150px;
-  display:inline-block;
 }
 
 div.but {
-     vertical-align:baseline;
+  margin-left: 150px;
 }
 
 button.sub {
      width:120px;
-     vertical-align:baseline;
      float: right;
 }
+
+input.FullName {
+    position: relative;
+    left: 30px;
+}
+
 
 </style>
 
@@ -37,44 +68,32 @@ button.sub {
 
 <body>
 <div class="MainDiv">
-<table>
-  <tr>
-    <td align="left"><a> Full Name:</a></td>
-    <td align="left"><input type="text" name="fullname" size="49" value="Mickey"></td> 
-  </tr>
-  <tr>
-    <td align="left"><a> Email Address:</a></td>
-    <td align="left"><input type="text" name="email" size="49" value="mickey@mause.com"></td> 
-  </tr>
-  <tr >
-    <td colspan="2">
+   <div>
+    <a> Full Name:</a>
+    <input class="FullName" type="text" name="fullname" size="49" value="Mickey"><br>
+    <a> Email Address:</a>
+    <input type="text" name="email" size="49" value="mickey@mause.com"><br><br>
        <fieldset><legend align="left">Employment</legend>
-       <input type="radio" name="gender" value="Govrement" checked> Govrement<br>
-       <input type="radio" name="gender" value="PrivateSector"> Private Sector<br>
-       <input type="radio" name="gender" value="other"  margin-right="2cm"> Other <input   disabled  type="text" name="OtherEmployment" size="50" value="Other Employment">
-       </fieldset></td>
-    </td>		
-  </tr>
-  <tr >
-     <td colspan="2"> 
-       <div>
+       <input type="radio" id="RadioGovrement" name="gender" value="Govrement" checked> Govrement<br>
+       <input type="radio" id="RadioPrivateSector" name="gender" value="PrivateSector"> Private Sector<br>
+       <input type="radio" id="RadioOther" name="gender" value="other"  margin-right="2cm"> Other <input   id="InputOther" disabled  type="text" name="OtherEmployment" size="50" value="Other Employment">
+       </fieldset>
          <br>
          <br>
-         <button type="button">Hide Aditonal options</button>
+        <div style="width:600px">
+         <button id="hide" type="button">Hide Aditonal options</button>
          <br>
          <br>
-       <fieldset width="200px"><legend align="left" size="200px">Employment</legend>
-       <input type="radio" > I eat all of these<br>
-       <input type="radio" > I eat all of these<br>
-       <input type="radio" > I eat all of these<br>
-       <input type="radio" > I eat all of these<br>
-       <input type="radio" > I eat all of these<br>
+       <fieldset  id="eat" ><legend align="left" size="200px">Diatary Prefernces</legend>
+       <input type="checkbox" id="RadioAll"> I eat all of these<br>
+       <input type="checkbox" id="R1"> I eat dairy<br>
+       <input type="checkbox" id="R2"> I eat fish<br>
+       <input type="checkbox" id="R3"> I eat meat<br>
+       <input type="checkbox" id="R4"> I eat vegetables<br>
        </fieldset>
        </div>
-      </td>		
-      <td> <div class="but"> <button type="button" class="sub" >Cancel</button>   <button type="button" class="sub" >Ok</button> </div></td>
-     </tr>
-   </table>
+    </div>
+       <div class="but"> <button type="button" class="sub" >Cancel</button>   <button style="margin-right: 15px" type="button" class="sub" >Ok</button> </div>
 </div>
 
 </body>
