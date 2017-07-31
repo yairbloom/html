@@ -17,8 +17,18 @@ div.MainDiv {
   margin-top: 100px;
   margin-bottom: 100px;
   margin-left: 150px;
+  display:inline-block;
 }
 
+div.but {
+     vertical-align:baseline;
+}
+
+button.sub {
+     width:120px;
+     vertical-align:baseline;
+     float: right;
+}
 
 </style>
 
@@ -27,7 +37,7 @@ div.MainDiv {
 
 <body>
 <div class="MainDiv">
-<table  style="widtd:100%" class ="t1">
+<table>
   <tr>
     <td align="left"><a> Full Name:</a></td>
     <td align="left"><input type="text" name="fullname" size="49" value="Mickey"></td> 
@@ -45,20 +55,26 @@ div.MainDiv {
        </fieldset></td>
     </td>		
   </tr>
-  <tr>
-    <tr>
-     <td > <button type="button">Hide Aditonal options</button></td>
-    </tr>
-      <td colspan="2">
-       <fieldset><legend align="left">Employment</legend>
+  <tr >
+     <td colspan="2"> 
+       <div>
+         <br>
+         <br>
+         <button type="button">Hide Aditonal options</button>
+         <br>
+         <br>
+       <fieldset width="200px"><legend align="left" size="200px">Employment</legend>
        <input type="radio" > I eat all of these<br>
        <input type="radio" > I eat all of these<br>
        <input type="radio" > I eat all of these<br>
        <input type="radio" > I eat all of these<br>
        <input type="radio" > I eat all of these<br>
-       </fieldset></td>
+       </fieldset>
+       </div>
       </td>		
+      <td> <div class="but"> <button type="button" class="sub" >Cancel</button>   <button type="button" class="sub" >Ok</button> </div></td>
      </tr>
+   </table>
 </div>
 
 </body>
